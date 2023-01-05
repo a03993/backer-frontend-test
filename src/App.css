@@ -1,0 +1,301 @@
+html {
+  background-color: #000000;
+}
+
+.App {
+  width: 100vw;
+  margin: auto;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+/* 字體 css */
+
+h1,
+h2,
+h3 {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 100%;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0 0.5rem;
+  line-height: 160%;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 13px;
+  color: #B4B4B5;
+}
+
+p {
+  font-family: 'Big Shoulders Display';
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.sold-amount {
+  font-family: 'Big Shoulders Display';
+  font-style: normal;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 48px;
+}
+
+#clr-g {
+  color: #787878;
+  margin: 0 0.2rem;
+}
+
+#clr-y {
+  color: #F2D24C;
+  vertical-align: middle;
+  margin: 0 0.2rem 0 1rem;
+}
+
+.step h2 {
+  font-size: 13px;
+  color: #CCCCCC;
+  opacity: 0.3;
+  text-align: center;
+}
+
+.step h2#active {
+  color: #F2D24C;
+  opacity: 100;
+}
+
+.step h3 {
+  font-size: 11px;
+  opacity: 0.3;
+  text-align: center;
+}
+
+.step h3#active {
+  color: #FFFFFF;
+  opacity: 100;
+}
+
+.slogan p {
+  font-weight: 700;
+  font-size: 36px;
+  color: #0F0F0F;
+  margin: 0.1rem;
+}
+
+.slogan h2 {
+  color: #0F0F0F;
+  text-align: left;
+}
+
+.slogan h3 {
+  color: #0F0F0F;
+  text-align: left;
+}
+
+.slogan-label {
+  font-family: 'Noto Sans TC';
+  font-weight: 900;
+  font-size: 16px;
+  vertical-align: text-top;
+  margin-left: 0.3rem;
+}
+
+.counter-container p {
+  font-weight: 500;
+  font-size: 58px;
+  color: #CCCCCC;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.counter .count-label {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #787878;
+}
+
+/* header css */
+
+.App-header {
+  width: 100vw;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 2em;
+}
+
+.App-logo {
+  width: 170px;
+  height: 26px;
+  justify-content: center;
+  padding: 0 1.3em;
+}
+
+.link {
+  width: 100vw;
+  border: 1px solid #3E3E3E;
+}
+
+/* body css */
+/* imgage & title setting */
+
+
+.img-calendar {
+  width: 25rem;
+}
+
+.title-marker {
+  background: #F2D24C;
+  color: #0F0F0F;
+}
+
+.link-all {
+  width: 100vw;
+  margin: auto;
+  border: 1px solid #B4B4B5;
+}
+
+/* content setting */
+
+.content-container {
+  margin: auto;
+  box-sizing: border-box;
+  border-right: 1px solid #3E3E3E;
+  border-left: 1px solid #3E3E3E;
+  margin: 0 1rem;
+  padding: 0.5rem 0;
+  text-align: justify;
+}
+
+.content-wrapper {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #3E3E3E;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  margin: 0.5rem;
+}
+
+/* co-brading setting */
+
+.co-branding-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.MWN-logo {
+  width: 125px;
+  height: 40px;
+}
+
+.co-branding {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  color: #686868;
+  margin: 0 0.6rem;
+}
+
+.JA-logo {
+  width: 165px;
+  height: 35px;
+}
+
+.co-branding-introduce {
+  width: 20rem;
+  margin: 0 auto;
+}
+
+/* step setting */
+
+.step-container {
+  margin: auto;
+  box-sizing: border-box;
+  border-right: 1px solid #3E3E3E;
+  border-left: 1px solid #3E3E3E;
+  margin: 0 1rem;
+}
+
+.step-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: justify;
+  padding: 0 2rem;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  margin: 1.2rem 0.5rem;
+}
+
+/* slogan setting */
+
+.slogan-container {
+  margin: auto;
+  background: #F2D24C;
+}
+
+.slogan-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.slogan#right {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  border-left: 1px solid #0F0F0F;
+  padding: 0 0.5rem;
+}
+
+/* counter setting */
+
+.counter-container {
+  margin: auto;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  border: 0.75px solid #DBDBDB;
+}
+
+.counter-wrapper {
+  margin: 1rem 2rem;
+}
+
+.counter {
+  display: flex;
+  flex-direction: row;
+}
