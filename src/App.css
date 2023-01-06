@@ -1,17 +1,27 @@
-html {
-  background-color: #000000;
+:root {
+  --black: #0F0F0F;
+  --dark-gray-porgress: #323232;
+  --dark-gray-border: #3E3E3E;
+  --dark-gray: #787878;
+  --dark-gray-symbol: #686868;
+  --middle-gray: #B4B4B5;
+  --light-gray: #CCCCCC;
+  --white: #FFFFFF;
+  --yellow: #F2D24C;
 }
 
-.App {
-  width: 100vw;
+
+html,
+body {
+  box-sizing: border-box;
+  background-color: var(--black);
   margin: auto;
-  background-color: #000000;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
+  color: var(--white);
 }
 
 /* 字體 css */
@@ -28,20 +38,17 @@ h3 {
 h1 {
   font-weight: 900;
   font-size: 32px;
-  line-height: 100%;
 }
 
 h2 {
   font-weight: 700;
   font-size: 20px;
-  margin: 0 0.5rem;
-  line-height: 160%;
 }
 
 h3 {
   font-weight: 400;
   font-size: 13px;
-  color: #B4B4B5;
+  color: var(--middle-gray);
 }
 
 p {
@@ -59,54 +66,53 @@ p {
 }
 
 #clr-g {
-  color: #787878;
+  color: var(--dark-gray);
   margin: 0 0.2rem;
 }
 
 #clr-y {
-  color: #F2D24C;
+  color: var(--yellow);
   vertical-align: middle;
   margin: 0 0.2rem 0 1rem;
 }
 
 .step h2 {
   font-size: 13px;
-  color: #CCCCCC;
+  color: var(--light-gray);
   opacity: 0.3;
-  text-align: center;
 }
 
 .step h2#active {
-  color: #F2D24C;
+  color: var(--yellow);
   opacity: 100;
 }
 
 .step h3 {
   font-size: 11px;
   opacity: 0.3;
-  text-align: center;
 }
 
 .step h3#active {
-  color: #FFFFFF;
+  color: var(--white);
   opacity: 100;
 }
 
 .slogan p {
   font-weight: 700;
   font-size: 36px;
-  color: #0F0F0F;
+  color: var(--black);
   margin: 0.1rem;
 }
 
 .slogan h2 {
-  color: #0F0F0F;
-  text-align: left;
+  color: var(--black);
+  margin: 0.5rem 0;
 }
 
 .slogan h3 {
-  color: #0F0F0F;
+  color: var(--black);
   text-align: left;
+  margin: 0.5rem 0;
 }
 
 .slogan-label {
@@ -120,7 +126,7 @@ p {
 .counter-container p {
   font-weight: 500;
   font-size: 58px;
-  color: #CCCCCC;
+  color: var(--light-gray);
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -133,7 +139,7 @@ p {
   font-size: 12px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #787878;
+  color: var(--dark-gray);
 }
 
 /* header css */
@@ -143,39 +149,43 @@ p {
   margin: auto;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
-  margin-top: 2em;
+  margin-top: 2rem;
 }
 
 .App-logo {
-  width: 170px;
-  height: 26px;
-  justify-content: center;
-  padding: 0 1.3em;
+  width: 169.98px;
+  height: 26.18px;
+  padding: 0 1.3rem;
 }
 
 .link {
   width: 100vw;
-  border: 1px solid #3E3E3E;
+  border: 1px solid var(--dark-gray-border);
 }
 
 /* body css */
-/* imgage & title setting */
-
+/* title setting */
 
 .img-calendar {
-  width: 25rem;
+  width: 20rem;
+  filter: drop-shadow(3px 9px 12px rgba(0, 0, 0, 0.5));
+}
+
+.title {
+  line-height: 140%;
 }
 
 .title-marker {
-  background: #F2D24C;
-  color: #0F0F0F;
+  background: var(--yellow);
+  color: var(--black);
 }
 
 .link-all {
   width: 100vw;
   margin: auto;
-  border: 1px solid #B4B4B5;
+  border: 1px solid var(--middle-gray);
 }
 
 /* content setting */
@@ -183,8 +193,8 @@ p {
 .content-container {
   margin: auto;
   box-sizing: border-box;
-  border-right: 1px solid #3E3E3E;
-  border-left: 1px solid #3E3E3E;
+  border-right: 1px solid var(--dark-gray-border);
+  border-left: 1px solid var(--dark-gray-border);
   margin: 0 1rem;
   padding: 0.5rem 0;
   text-align: justify;
@@ -192,15 +202,19 @@ p {
 
 .content-wrapper {
   padding: 0.5rem 0;
-  border-bottom: 1px solid #3E3E3E;
+  border-bottom: 1px solid var(--dark-gray-border);
 }
 
 .content {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  text-align: center;
-  margin: 0.5rem;
+  margin: 0 0.5rem;
+  line-height: 160%;
+}
+
+.text-calendar {
+  display: none;
 }
 
 /* co-brading setting */
@@ -223,7 +237,7 @@ p {
   font-style: normal;
   font-weight: 400;
   font-size: 25px;
-  color: #686868;
+  color: var(--dark-gray-symbol);
   margin: 0 0.6rem;
 }
 
@@ -242,8 +256,8 @@ p {
 .step-container {
   margin: auto;
   box-sizing: border-box;
-  border-right: 1px solid #3E3E3E;
-  border-left: 1px solid #3E3E3E;
+  border-right: 1px solid var(--dark-gray-border);
+  border-left: 1px solid var(--dark-gray-border);
   margin: 0 1rem;
 }
 
@@ -251,21 +265,55 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  text-align: justify;
-  padding: 0 2rem;
 }
 
 .step {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: 1.2rem 0.5rem;
+}
+
+.target {
+  width: 7px;
+  height: 7px;
+  background: var(--dark-gray);
+  transform: rotate(45deg);
+  margin: 0.8rem;
+  z-index: 1;
+}
+
+.target.active {
+  background: var(--white);
+}
+
+/* progress setting */
+
+.progress-container {
+  width: 80vw;
+  margin: auto;
+  border: 3px solid var(--dark-gray-porgress);
+  transform: translateY(-640%);
+  z-index: -1;
+}
+
+.progress {
+  background-color: var(--yellow);
+  height: 3px;
+  /* width 控制進度條長度 */
+  width: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+  z-index: -1;
+  transition: 0.4s ease;
 }
 
 /* slogan setting */
 
 .slogan-container {
   margin: auto;
-  background: #F2D24C;
+  max-width: 450px;
+  background: var(--yellow);
 }
 
 .slogan-wrapper {
@@ -278,8 +326,8 @@ p {
   display: flex;
   flex-direction: column;
   align-items: baseline;
-  border-left: 1px solid #0F0F0F;
-  padding: 0 0.5rem;
+  border-left: 1px solid var(--black);
+  padding: 0 1rem;
 }
 
 /* counter setting */
@@ -292,10 +340,204 @@ p {
 }
 
 .counter-wrapper {
-  margin: 1rem 2rem;
+  margin: 0.5rem 1rem;
 }
 
 .counter {
   display: flex;
   flex-direction: row;
+}
+
+.time-colon {
+  padding-bottom: 2rem;
+}
+
+/* desk */
+
+@media screen and (min-width:1336px) {
+
+  /* text setting */
+
+  h1 {
+    font-size: 55px;
+    line-height: 80%;
+    padding: 0 8.5rem;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  .sold-amount {
+    font-size: 70px;
+  }
+
+  #clr-g {
+    margin: 0 0.5rem;
+  }
+
+  #clr-y {
+    margin: 0 0.5rem 0 2.5rem;
+  }
+
+  /* header setting */
+
+  .App-header {
+    margin-top: 3rem;
+  }
+
+  .App-logo {
+    width: 230px;
+    height: 36px;
+    padding: 0 1.5rem;
+  }
+
+  /* title setting */
+
+  .title-container {
+    margin: auto 20rem;
+  }
+
+  .title-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    padding: 1rem;
+    border-left: 1px solid var(--dark-gray-border);
+  }
+
+  .img {
+    position: absolute;
+    margin: 0 32rem;
+    z-index: 1;
+  }
+
+  .img-calendar {
+    width: 37rem;
+  }
+
+  .text-calendar {
+    display: flex;
+    margin: auto 25rem;
+    justify-content: flex-end;
+    padding: auto;
+    font-family: 'Big Shoulders Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 200px;
+    line-height: 239px;
+    text-transform: uppercase;
+    color: var(--dark-gray);
+  }
+
+  .title {
+    text-align: left;
+    margin: 2rem 0 1rem 0;
+    z-index: 0;
+  }
+
+  .link-all {
+    width: 100vw;
+    margin: auto;
+    border: 1px solid var(--dark-gray-border);
+  }
+
+  .link-all.nd {
+    border: none;
+  }
+
+  /* content setting */
+
+  .content-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    margin: auto 20rem;
+    border: 1px solid var(--dark-gray-border);
+  }
+
+  .content-wrapper {
+    border: none;
+    margin: 1rem 2rem;
+  }
+
+  .co-branding-wrapper {
+    margin: 1rem 2rem;
+  }
+
+  /* co-branding setting */
+
+  .MWN-logo {
+    width: 155px;
+    height: 50px;
+  }
+
+  .co-branding {
+    font-family: 'Barlow Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    color: var(--dark-gray-symbol);
+    margin: 0 1rem;
+  }
+
+  .JA-logo {
+    width: 180px;
+    height: 40px;
+  }
+
+  .co-branding-introduce {
+    width: 24rem;
+  }
+
+  /* step setting */
+
+  .step-container {
+    margin: auto 20rem;
+    padding: 2rem 0;
+    border: none;
+  }
+
+  .step {
+    width: 25%;
+    justify-content: flex-start;
+  }
+
+  .step h2 {
+    font-size: 16px;
+  }
+
+  .step h3 {
+    font-size: 16px;
+    text-align: left;
+  }
+
+  /* slogan & counter */
+
+  .desk-slogan-counter {
+    display: flex;
+    flex-direction: row;
+    margin: auto 20rem;
+  }
+
+  .slogan-container {
+    margin: 0.1rem;
+    max-width: 450px;
+  }
+
+  /* counter */
+  .counter-container {
+    margin: 0.1rem;
+    padding: 0 15rem;
+  }
+
+  .counter {
+    display: flex;
+    flex-direction: row;
+  }
 }
