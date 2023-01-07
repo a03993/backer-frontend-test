@@ -198,6 +198,8 @@ p {
 
 
 .title-marker {
+  display: inline-block;
+  height: 28px;
   background: var(--yellow);
   color: var(--black);
 }
@@ -479,6 +481,10 @@ p {
     z-index: 0;
   }
 
+  .title-marker {
+    height: 55px;
+  }
+
   .map-calendar-wrapper {
     display: flex;
     flex-direction: row;
@@ -530,7 +536,7 @@ p {
   }
 
   .desk-line {
-    border: 1px solid var(--dark-gray-border);
+    border-left: 1px solid var(--dark-gray-border);
     margin: 0 0.5rem 0 1.5rem;
   }
 
@@ -631,6 +637,7 @@ p {
 
   .slogan#left {
     border-right: 1px solid var(--black);
+    margin-right: 1rem;
   }
 
   /* counter setting */
@@ -639,5 +646,17 @@ p {
     width: 50%;
     max-width: 800px;
     padding: 1rem;
+  }
+}
+
+@media screen and (min-width:1650px) {
+
+  .slogan#left {
+    margin: 0 2rem;
+    padding: 0 3rem 0 2rem;
+  }
+
+  .slogan#right {
+    margin: 0 1rem;
   }
 }
