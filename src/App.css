@@ -24,7 +24,11 @@ body {
   color: var(--white);
 }
 
-/* 字體 css */
+.show-in-desk {
+  display: none;
+}
+
+/* font setting */
 
 h1,
 h2,
@@ -42,12 +46,13 @@ h1 {
 
 h2 {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 h3 {
   font-weight: 400;
   font-size: 13px;
+  line-height: 20px;
   color: var(--middle-gray);
 }
 
@@ -57,12 +62,23 @@ p {
   text-transform: uppercase;
 }
 
+.calendar-text {
+  font-family: 'Big Shoulders Display';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 200px;
+  line-height: 239px;
+  text-transform: uppercase;
+  color: var(--dark-gray);
+}
+
 .sold-amount {
   font-family: 'Big Shoulders Display';
   font-style: normal;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 48px;
+  letter-spacing: 0.1px;
 }
 
 #clr-g {
@@ -101,18 +117,18 @@ p {
   font-weight: 700;
   font-size: 36px;
   color: var(--black);
-  margin: 0.1rem;
+  margin: 1rem 0;
 }
 
 .slogan h2 {
+  font-size: 18px;
   color: var(--black);
-  margin: 0.5rem 0;
+  line-height: 50%;
 }
 
 .slogan h3 {
   color: var(--black);
   text-align: left;
-  margin: 0.5rem 0;
 }
 
 .slogan-label {
@@ -142,9 +158,9 @@ p {
   color: var(--dark-gray);
 }
 
-/* header css */
+/* logo setting */
 
-.App-header {
+.logo-container {
   width: 100vw;
   margin: auto;
   display: flex;
@@ -160,12 +176,11 @@ p {
   padding: 0 1.3rem;
 }
 
-.link {
+.logo-line {
   width: 100vw;
   border: 1px solid var(--dark-gray-border);
 }
 
-/* body css */
 /* title setting */
 
 .img-calendar {
@@ -173,16 +188,21 @@ p {
   filter: drop-shadow(3px 9px 12px rgba(0, 0, 0, 0.5));
 }
 
-.title {
-  line-height: 140%;
+.title-container {
+  padding: 2px;
 }
+
+.title {
+  line-height: 25px;
+}
+
 
 .title-marker {
   background: var(--yellow);
   color: var(--black);
 }
 
-.link-all {
+.line {
   width: 100vw;
   margin: auto;
   border: 1px solid var(--middle-gray);
@@ -209,22 +229,20 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 0 0.5rem;
-  line-height: 160%;
-}
-
-.text-calendar {
-  display: none;
+  line-height: 100%;
 }
 
 /* co-brading setting */
+
+.co-branding-wrapper {
+  padding: 1.5rem 0 0.5rem 0;
+}
 
 .co-branding-logo {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin: 1.5rem 0;
 }
 
 .MWN-logo {
@@ -275,8 +293,8 @@ p {
 }
 
 .target {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   background: var(--dark-gray);
   transform: rotate(45deg);
   margin: 0.8rem;
@@ -290,10 +308,10 @@ p {
 /* progress setting */
 
 .progress-container {
-  width: 80vw;
-  margin: auto;
   border: 3px solid var(--dark-gray-porgress);
-  transform: translateY(-640%);
+  width: 75%;
+  margin: auto;
+  transform: translateY(-650%);
   z-index: -1;
 }
 
@@ -314,6 +332,7 @@ p {
   margin: auto;
   max-width: 450px;
   background: var(--yellow);
+  padding: 0 1rem;
 }
 
 .slogan-wrapper {
@@ -322,25 +341,25 @@ p {
   align-items: center;
 }
 
+.slogan#left {
+  border-right: 1px solid var(--black);
+}
+
 .slogan#right {
   display: flex;
   flex-direction: column;
   align-items: baseline;
-  border-left: 1px solid var(--black);
-  padding: 0 1rem;
+  padding-left: 0.5rem;
 }
 
 /* counter setting */
 
 .counter-container {
   margin: auto;
-  padding: 0.5rem;
+  max-width: 480px;
+  padding: 1rem;
   box-sizing: border-box;
   border: 0.75px solid #DBDBDB;
-}
-
-.counter-wrapper {
-  margin: 0.5rem 1rem;
 }
 
 .counter {
@@ -352,19 +371,30 @@ p {
   padding-bottom: 2rem;
 }
 
+/* ipad */
+
+@media screen and (min-width:768px) {}
+
 /* desk */
 
-@media screen and (min-width:1336px) {
+@media screen and (min-width:1366px) {
 
-  /* text setting */
+  .show-in-desk {
+    display: block;
+  }
+
+  #none-in-desk {
+    display: none;
+  }
+
+  /* font setting */
 
   h1 {
-    font-size: 55px;
-    line-height: 80%;
-    padding: 0 8.5rem;
+    font-size: 58px;
   }
 
   h2 {
+    font-weight: 700;
     font-size: 24px;
   }
 
@@ -372,172 +402,242 @@ p {
     font-size: 16px;
   }
 
+  p {
+    font-family: 'Big Shoulders Display';
+    font-style: normal;
+    text-transform: uppercase;
+  }
+
   .sold-amount {
     font-size: 70px;
   }
 
   #clr-g {
-    margin: 0 0.5rem;
+    color: var(--dark-gray);
+    margin: 0;
   }
 
   #clr-y {
-    margin: 0 0.5rem 0 2.5rem;
+    color: var(--yellow);
+    vertical-align: middle;
+    margin: 0 0.5rem 0 1rem;
   }
 
-  /* header setting */
-
-  .App-header {
-    margin-top: 3rem;
-  }
-
-  .App-logo {
-    width: 230px;
-    height: 36px;
-    padding: 0 1.5rem;
-  }
-
-  /* title setting */
-
-  .title-container {
-    margin: auto 20rem;
-  }
-
-  .title-wrapper {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    padding: 1rem;
-    border-left: 1px solid var(--dark-gray-border);
-  }
-
-  .img {
-    position: absolute;
-    margin: 0 32rem;
-    z-index: 1;
-  }
-
-  .img-calendar {
-    width: 37rem;
-  }
-
-  .text-calendar {
-    display: flex;
-    margin: auto 25rem;
-    justify-content: flex-end;
-    padding: auto;
-    font-family: 'Big Shoulders Display';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 200px;
-    line-height: 239px;
-    text-transform: uppercase;
-    color: var(--dark-gray);
-  }
-
-  .title {
-    text-align: left;
-    margin: 2rem 0 1rem 0;
-    z-index: 0;
-  }
-
-  .link-all {
-    width: 100vw;
-    margin: auto;
-    border: 1px solid var(--dark-gray-border);
-  }
-
-  .link-all.nd {
-    border: none;
-  }
-
-  /* content setting */
-
-  .content-container {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    align-items: center;
-    margin: auto 20rem;
-    border: 1px solid var(--dark-gray-border);
-  }
-
-  .content-wrapper {
-    border: none;
-    margin: 1rem 2rem;
-  }
-
-  .co-branding-wrapper {
-    margin: 1rem 2rem;
-  }
-
-  /* co-branding setting */
-
-  .MWN-logo {
-    width: 155px;
-    height: 50px;
-  }
-
-  .co-branding {
-    font-family: 'Barlow Condensed';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 25px;
-    color: var(--dark-gray-symbol);
-    margin: 0 1rem;
-  }
-
-  .JA-logo {
-    width: 180px;
-    height: 40px;
-  }
-
-  .co-branding-introduce {
-    width: 24rem;
-  }
-
-  /* step setting */
-
-  .step-container {
-    margin: auto 20rem;
-    padding: 2rem 0;
-    border: none;
-  }
-
-  .step {
-    width: 25%;
-    justify-content: flex-start;
-  }
-
-  .step h2 {
-    font-size: 16px;
-  }
-
+  .step h2,
   .step h3 {
     font-size: 16px;
     text-align: left;
   }
 
-  /* slogan & counter */
+  .slogan p {
+    font-size: 48px;
+    margin: 1rem 0;
+  }
 
-  .desk-slogan-counter {
+  .slogan h2 {
+    font-size: 24px;
+  }
+
+  .slogan h3 {
+    font-size: 16px;
+  }
+
+  .slogan-label {
+    font-size: 20px;
+    vertical-align: text-top;
+    margin-left: 0.5rem;
+  }
+
+  .counter-container p {
+    font-size: 70px;
+  }
+
+  .counter .count-label {
+    font-size: 16px;
+  }
+
+  /* title */
+
+  .title-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+
+  .img-calendar {
+    position: absolute;
+    right: 10rem;
+    width: 35rem;
+    z-index: 1;
+  }
+
+  .title {
+    line-height: 50px;
+    text-align: left;
+    margin: 1rem;
+    padding-right: 18rem;
+    z-index: 0;
+  }
+
+  .map-calendar-wrapper {
     display: flex;
     flex-direction: row;
-    margin: auto 20rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-top: 1px solid var(--dark-gray);
+  }
+
+  .img-map {
+    width: 575px;
+    height: 242px;
+    margin-top: 1.5rem;
+    z-index: 1;
+  }
+
+  .calendar-text {
+    position: absolute;
+    right: 12rem;
+    font-family: 'Big Shoulders Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 200px;
+    text-transform: uppercase;
+    color: var(--dark-gray);
+    padding: 0 2rem;
+  }
+
+  .line {
+    position: absolute;
+    top: 40rem;
+    border: 1px solid var(--dark-gray-border);
+    z-index: 0;
+  }
+
+  /* content */
+
+  .content-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    margin: 0 15rem;
+    padding: 2rem 1rem;
+    border-bottom: 1px solid var(--dark-gray-border);
+  }
+
+  .content-wrapper {
+    border-bottom: none;
+    margin-left: 1rem;
+  }
+
+  .desk-line {
+    border: 1px solid var(--dark-gray-border);
+    margin: 0 0.5rem 0 1.5rem;
+  }
+
+  .content#nd {
+    padding: 1rem 0;
+  }
+
+  /* co-brading setting */
+
+  .co-branding-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .MWN-logo {
+    width: 145px;
+    height: 46px;
+  }
+
+  .co-branding {
+    font-size: 30px;
+    margin: 0 1rem;
+  }
+
+  .JA-logo {
+    width: 190px;
+    height: 40px;
+  }
+
+  .co-branding-introduce {
+    width: 25rem;
+  }
+
+  .img-uni {
+    position: absolute;
+    right: 0px;
+    top: 40rem;
+    overflow: hidden;
+    height: 242px;
+  }
+
+  /* step setting */
+
+  .step-container {
+    margin: auto;
+    border: none;
+    margin: 0 15rem 1rem 15rem;
+    border-left: 1px solid var(--dark-gray-border);
+    border-right: 1px solid var(--dark-gray-border);
+  }
+
+
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 1rem 2rem;
+  }
+
+  .target {
+    width: 12px;
+    height: 12px;
+    margin-left: auto;
+  }
+
+  /* progress setting */
+
+  .progress-container {
+    border: 4px solid var(--dark-gray-porgress);
+    width: 90%;
+    transform: translateY(-480%);
+  }
+
+  .progress {
+    height: 4px;
+  }
+
+  /* slogan setting */
+
+  .slogan-counter-container {
+    display: flex;
+    flex-direction: row;
+    margin: 0 15rem;
   }
 
   .slogan-container {
-    margin: 0.1rem;
-    max-width: 450px;
+    max-width: 50%;
+    background: var(--yellow);
   }
 
-  /* counter */
-  .counter-container {
-    margin: 0.1rem;
-    padding: 0 15rem;
-  }
-
-  .counter {
+  .slogan-wrapper {
     display: flex;
     flex-direction: row;
+    align-items: center;
+  }
+
+  .slogan#left {
+    border-right: 1px solid var(--black);
+  }
+
+  /* counter setting */
+
+  .counter-container {
+    width: 50%;
+    max-width: 800px;
+    padding: 1rem;
   }
 }
