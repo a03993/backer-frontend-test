@@ -78,18 +78,16 @@ p {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 48px;
-  letter-spacing: 0.1px;
 }
 
 #clr-g {
   color: var(--dark-gray);
-  margin: 0 0.2rem;
+  padding: 0 0.5rem;
 }
 
 #clr-y {
   color: var(--yellow);
-  vertical-align: middle;
-  margin: 0 0.2rem 0 1rem;
+  padding: 0 0.5rem;
 }
 
 .step h2 {
@@ -218,26 +216,36 @@ p {
   border-right: 1px solid var(--dark-gray-border);
   border-left: 1px solid var(--dark-gray-border);
   margin: 0 1rem;
-  padding: 0.5rem 0;
   text-align: justify;
 }
 
 .content-wrapper {
-  padding: 0.5rem 0;
+  padding: 1rem 0 0.5em 0;
   border-bottom: 1px solid var(--dark-gray-border);
 }
 
 .content {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  line-height: 100%;
+  justify-content: space-around;
+  align-items: center;
+  line-height: 50%;
+  padding: 1rem;
+  max-width: 400px;
+  margin: auto;
+}
+
+#content {
+  align-items: baseline;
 }
 
 /* co-brading setting */
 
-.co-branding-wrapper {
-  padding: 1.5rem 0 0.5rem 0;
+
+.co-branding {
+  padding: 1rem;
+  margin: auto;
+  max-width: 400px;
 }
 
 .co-branding-logo {
@@ -258,7 +266,6 @@ p {
   font-weight: 400;
   font-size: 25px;
   color: var(--dark-gray-symbol);
-  margin: 0 0.6rem;
 }
 
 .JA-logo {
@@ -267,7 +274,6 @@ p {
 }
 
 .co-branding-introduce {
-  width: 20rem;
   margin: 0 auto;
 }
 
@@ -375,7 +381,66 @@ p {
 
 /* ipad */
 
-@media screen and (min-width:768px) {}
+@media screen and (min-width:768px) {
+  /* font setting */
+
+  h1 {
+    font-size: 45px;
+  }
+
+  /* title setting */
+
+  .title-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+
+  .img-calendar {
+    width: 23rem;
+  }
+
+  .title {
+    line-height: 40px;
+    margin: 2rem 0;
+    text-align: left;
+  }
+
+  .title-marker {
+    height: 45px;
+  }
+
+  /* slogan setting */
+
+  .slogan-counter-container {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+  }
+
+  .slogan-container {
+
+    background: var(--yellow);
+    padding: 0.5rem;
+  }
+
+  .slogan-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .slogan#left {
+    border-right: 1px solid var(--black);
+    margin-right: 1rem;
+  }
+
+  /* counter setting */
+
+  .counter-container {
+    width: 80%;
+    max-width: 800px;
+  }
+}
 
 /* desk */
 
@@ -398,31 +463,15 @@ p {
   h2 {
     font-weight: 700;
     font-size: 24px;
+    letter-spacing: 0.03rem;
   }
 
   h3 {
     font-size: 16px;
   }
 
-  p {
-    font-family: 'Big Shoulders Display';
-    font-style: normal;
-    text-transform: uppercase;
-  }
-
   .sold-amount {
     font-size: 70px;
-  }
-
-  #clr-g {
-    color: var(--dark-gray);
-    margin: 0;
-  }
-
-  #clr-y {
-    color: var(--yellow);
-    vertical-align: middle;
-    margin: 0 0.5rem 0 1rem;
   }
 
   .step h2,
@@ -433,7 +482,6 @@ p {
 
   .slogan p {
     font-size: 48px;
-    margin: 1rem 0;
   }
 
   .slogan h2 {
@@ -524,25 +572,20 @@ p {
   .content-container {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: center;
+    justify-content: space-evenly;
     margin: 0 15rem;
-    padding: 2rem 1rem;
+    padding: 2rem 0;
     border-bottom: 1px solid var(--dark-gray-border);
   }
 
   .content-wrapper {
     border-bottom: none;
-    margin-left: 1rem;
   }
 
   .desk-line {
     border-left: 1px solid var(--dark-gray-border);
-    margin: 0 0.5rem 0 1.5rem;
   }
 
-  .content#nd {
-    padding: 1rem 0;
-  }
 
   /* co-brading setting */
 
@@ -619,44 +662,24 @@ p {
   /* slogan setting */
 
   .slogan-counter-container {
-    display: flex;
-    flex-direction: row;
     margin: 0 15rem;
   }
 
-  .slogan-container {
-    max-width: 50%;
-    background: var(--yellow);
-  }
-
-  .slogan-wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .slogan#left {
-    border-right: 1px solid var(--black);
-    margin-right: 1rem;
-  }
-
-  /* counter setting */
-
-  .counter-container {
-    width: 50%;
-    max-width: 800px;
-    padding: 1rem;
+  .counter {
+    padding: 0.4rem;
   }
 }
 
 @media screen and (min-width:1650px) {
 
-  .slogan#left {
-    margin: 0 2rem;
-    padding: 0 3rem 0 2rem;
+  /* slogan setting */
+  .slogan-container {
+    max-width: 600px;
+    margin: 0;
   }
 
-  .slogan#right {
-    margin: 0 1rem;
+  .counter-container {
+    width: 80%;
+    max-width: 1000px;
   }
 }

@@ -2,6 +2,7 @@ import logo from './assets/images/logo_2023WC.png';
 import img from './assets/images/img_calendar.png';
 import logoMWN from './assets/images/logo_MWN.png';
 import logoJA from './assets/images/logo_JA.png';
+import CountUp from 'react-countup';
 import './App.css';
 
 function App() {
@@ -34,23 +35,29 @@ function App() {
       {/* content */}
       <div className="content-container">
         <div className="content-wrapper">
-          <div className="content" id="st">
-            <h2>已售出<span className="sold-amount" id="clr-g">29,800</span>本國際觀察曆</h2>
+          <div className="content" id="content">
+            <h2>已售出</h2>
+            <span className="sold-amount" id="clr-g"><CountUp start={29750} end={29800} duration={2} /></span>
+            <h2>本國際觀察曆</h2>
           </div>
-          <div className="content" id="nd">
-            <h2>已公益捐贈<span className="sold-amount" id="clr-y">500</span>本國際觀察曆</h2>
+          <div className="content">
+            <h2>已公益捐贈</h2>
+            <span className="sold-amount" id="clr-y"><CountUp start={450} end={500} duration={2} /></span>
+            <h2>本國際觀察曆</h2>
           </div>
         </div>
         <div class="desk-line"></div>
         {/* co-branding */}
         <div className="co-branding-wrapper">
-          <div className="co-branding-logo">
-            <img src={logoMWN} className="MWN-logo" alt="logo" />
-            <p className="co-branding">X</p>
-            <img src={logoJA} className="JA-logo" alt="logo" />
-          </div>
-          <div className="co-branding-introduce">
-            <h3>敏迪選讀™ 攜手 均一平台教育基金會 關注偏鄉失學的問題！每售出 50 本國際觀察曆，我們就捐出 1 本贈予偏鄉師生，一起點亮孩子的知識黑夜。</h3>
+          <div className="co-branding">
+            <div className="co-branding-logo">
+              <img src={logoMWN} className="MWN-logo" alt="logo" />
+              <p className="co-branding">X</p>
+              <img src={logoJA} className="JA-logo" alt="logo" />
+            </div>
+            <div className="co-branding-introduce">
+              <h3>敏迪選讀™ 攜手 均一平台教育基金會 關注偏鄉失學的問題！每售出 50 本國際觀察曆，我們就捐出 1 本贈予偏鄉師生，一起點亮孩子的知識黑夜。</h3>
+            </div>
           </div>
         </div>
         {/* show in desk */}
