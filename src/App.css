@@ -331,7 +331,7 @@ p {
 .progress {
   background-color: var(--yellow);
   height: 3px;
-  width: 80%;
+  width: 95%;
   position: absolute;
   transform: translateY(-50%);
   z-index: -1;
@@ -346,7 +346,7 @@ p {
   }
 
   to {
-    width: 80%;
+    width: 95%;
   }
 }
 

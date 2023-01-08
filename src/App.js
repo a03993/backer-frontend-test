@@ -111,9 +111,9 @@ function App() {
             <div className="target active"></div>
           </div>
           <div className="step">
-            <h2>20,000本</h2>
-            <h3>解鎖 6 部經典電影 20,000 組 Giloo 體驗序號</h3>
-            <div className="target"></div>
+            <h2 id="active">20,000本</h2>
+            <h3 id="active">解鎖 6 部經典電影 20,000 組 Giloo 體驗序號</h3>
+            <div className="target active"></div>
           </div>
         </div>
         {/* progress */}
