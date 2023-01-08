@@ -273,6 +273,11 @@ p {
   height: 35px;
 }
 
+.MWN-logo:hover,
+.JA-logo:hover {
+  transform: scale(1.2)
+}
+
 .co-branding-introduce {
   margin: 0 auto;
 }
@@ -326,12 +331,23 @@ p {
 .progress {
   background-color: var(--yellow);
   height: 3px;
-  /* width 控制進度條長度 */
-  width: 50%;
+  width: 80%;
   position: absolute;
   transform: translateY(-50%);
   z-index: -1;
   transition: 0.4s ease;
+  -webkit-animation: play 2s steps(50);
+  animation: play 2s steps(50)
+}
+
+@keyframes play {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 80%;
+  }
 }
 
 /* slogan setting */
@@ -385,7 +401,12 @@ p {
   /* font setting */
 
   h1 {
-    font-size: 45px;
+    font-size: 35px;
+  }
+
+  h2 {
+    font-size: 20px;
+    letter-spacing: 0.1em;
   }
 
   /* title setting */
@@ -401,13 +422,28 @@ p {
   }
 
   .title {
-    line-height: 40px;
+    line-height: 45px;
     margin: 2rem 0;
     text-align: left;
   }
 
   .title-marker {
-    height: 45px;
+    height: 40px;
+  }
+
+  /* content setting */
+
+  .content-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    padding: 2rem 0;
+  }
+
+  .content-wrapper {
+    border-bottom: none;
+    width: 25rem;
+    border-left: 1px solid var(--dark-gray-border);
   }
 
   /* slogan setting */
@@ -462,8 +498,8 @@ p {
 
   h2 {
     font-weight: 700;
-    font-size: 24px;
-    letter-spacing: 0.03rem;
+    font-size: 22px;
+    letter-spacing: 0.1rem;
   }
 
   h3 {
@@ -471,7 +507,7 @@ p {
   }
 
   .sold-amount {
-    font-size: 70px;
+    font-size: 65px;
   }
 
   .step h2,
@@ -516,7 +552,7 @@ p {
 
   .img-calendar {
     position: absolute;
-    right: 10rem;
+    right: 8rem;
     width: 35rem;
     z-index: 1;
   }
@@ -567,19 +603,17 @@ p {
     z-index: 0;
   }
 
-  /* content */
+  /* content setting */
 
   .content-container {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-evenly;
     margin: 0 15rem;
-    padding: 2rem 0;
     border-bottom: 1px solid var(--dark-gray-border);
   }
 
   .content-wrapper {
     border-bottom: none;
+    width: 27rem;
+    border-left: none;
   }
 
   .desk-line {

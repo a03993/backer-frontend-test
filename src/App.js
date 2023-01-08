@@ -2,10 +2,39 @@ import logo from './assets/images/logo_2023WC.png';
 import img from './assets/images/img_calendar.png';
 import logoMWN from './assets/images/logo_MWN.png';
 import logoJA from './assets/images/logo_JA.png';
+import React, { useEffect, useState } from 'react';
 import CountUp from 'react-countup';
 import './App.css';
 
+
+
 function App() {
+  // function Countdown
+  const calculateTimeLeft = () => {
+    let year = new Date().getFullYear();
+    const difference = +new Date(`1/15/${year}`) - +new Date();
+    let timeLeft = {};
+
+    if (difference > 0) {
+      timeLeft = {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
+      }
+    }
+
+    return timeLeft;
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    setTimeout(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+  });
+
   return (
     <div className="App">
       {/* logo */}
@@ -37,12 +66,14 @@ function App() {
         <div className="content-wrapper">
           <div className="content" id="content">
             <h2>已售出</h2>
-            <span className="sold-amount" id="clr-g"><CountUp start={29750} end={29800} duration={2} /></span>
+            <span className="sold-amount" id="clr-g"><CountUp start={29750} end={29800} duration={2} useEasing={true}
+              separator="," /></span>
             <h2>本國際觀察曆</h2>
           </div>
           <div className="content">
             <h2>已公益捐贈</h2>
-            <span className="sold-amount" id="clr-y"><CountUp start={450} end={500} duration={2} /></span>
+            <span className="sold-amount" id="clr-y"><CountUp start={450} end={500} duration={2} useEasing={true}
+              separator="," /></span>
             <h2>本國際觀察曆</h2>
           </div>
         </div>
@@ -75,9 +106,9 @@ function App() {
             <div className="target active"></div>
           </div>
           <div className="step">
-            <h2>15,000</h2>
-            <h3>解鎖 4 部經典電影 15,000 組 Giloo 體驗序號</h3>
-            <div className="target"></div>
+            <h2 id="active">15,000</h2>
+            <h3 id="active">解鎖 4 部經典電影 15,000 組 Giloo 體驗序號</h3>
+            <div className="target active"></div>
           </div>
           <div className="step">
             <h2>20,000本</h2>
@@ -87,7 +118,7 @@ function App() {
         </div>
         {/* progress */}
         <div className="progress-container">
-          <div className="progress" id="progress"></div>
+          <div className="progress"></div>
         </div>
       </div>
       {/* slogan & counter */}
@@ -107,13 +138,13 @@ function App() {
         {/* counter */}
         <div className="counter-container">
           <div className="counter">
-            <p>06<span className="count-label">DAYS</span></p>
+            <p>{timeLeft.days}<span className="count-label">DAYS</span></p>
             <p className="time-colon">:</p>
-            <p>23<span className="count-label">HOURS</span></p>
+            <p>{timeLeft.hours}<span className="count-label">HOURS</span></p>
             <p className="time-colon">:</p>
-            <p>59<span className="count-label">MINS</span></p>
+            <p>{timeLeft.minutes}<span className="count-label">MINS</span></p>
             <p className="time-colon">:</p>
-            <p>59<span className="count-label">SECS</span></p>
+            <p>{timeLeft.seconds}<span className="count-label">SECS</span></p>
           </div>
         </div>
       </div>
